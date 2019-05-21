@@ -7,9 +7,13 @@ class CurrencyContainer extends Component {
         <div className="name">
           This currency name will go using 'this.prop.'
         </div>
-        <div className="price">This is where the price will go</div>
-        <div className="symbol">This is where the symbol will go</div>
-        <div className="rank">This is where the rank will go</div>
+        <div className="price">
+          This is where the price will go: quotes->usd->price{' '}
+        </div>
+        <div className="symbol">
+          This is where the symbol will go: quotes->symbol
+        </div>
+        <div className="rank">This is where the rank will go: quotes->rank</div>
       </>
     )
   }
