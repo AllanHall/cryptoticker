@@ -5,9 +5,17 @@ class CurrencyList extends Component {
   state = {
     currencyData: []
   }
-  componentDidMount() {
+  componentWillMount() {
     this.getCurrencyFromApi()
     console.log('hi')
+  }
+  componentDidMount() {
+    this.getCurrencyFromApi()
+    console.log('oh hey')
+  }
+  componentWillUnmount() {
+    this.getCurrencyFromApi()
+    console.log('echo')
   }
   getCurrencyFromApi = () => {
     fetch('https://api.coinmarketcap.com/v2/ticker/?limit=20')
