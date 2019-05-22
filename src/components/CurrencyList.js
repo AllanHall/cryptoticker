@@ -6,6 +6,10 @@ class CurrencyList extends Component {
     currencyData: []
   }
   componentDidMount() {
+    this.getCurrencyFromApi()
+    console.log('hi')
+  }
+  getCurrencyFromApi = () => {
     fetch('https://api.coinmarketcap.com/v2/ticker/?limit=20')
       .then(resp => {
         return resp.json()
@@ -15,11 +19,16 @@ class CurrencyList extends Component {
         this.setState({
           currencyData: json.data
         })
+        console.log(json.data)
       })
   }
   render() {
+    this.getCurrencyFromApi()
+  }
+  render() {
+    console.log('rendering')
     return (
-      <main className="currency-list">
+      <>
         {this.state.currencyData.map(currency => {
           return (
             <CurrencyContainer
@@ -30,7 +39,7 @@ class CurrencyList extends Component {
             />
           )
         })}
-      </main>
+      </>
     )
   }
 }
