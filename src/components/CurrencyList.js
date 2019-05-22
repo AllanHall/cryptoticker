@@ -23,20 +23,19 @@ class CurrencyList extends Component {
       })
   }
   render() {
-    this.getCurrencyFromApi()
-  }
-  render() {
     console.log('rendering')
     return (
       <>
         {this.state.currencyData.map(currency => {
           return (
-            <CurrencyContainer
-              name={currency.name}
-              price={currency.quotes.USD.price}
-              symbol={currency.symbol}
-              rank={currency.quotes.rank}
-            />
+            <>
+              <CurrencyContainer
+                name={currency.name}
+                price={currency.quotes.USD.price}
+                symbol={currency.symbol}
+                rank={currency.quotes.rank}
+              />
+            </>
           )
         })}
       </>
