@@ -13,10 +13,7 @@ class CurrencyList extends Component {
     this.getCurrencyFromApi()
     console.log('oh hey')
   }
-  componentWillUnmount() {
-    this.getCurrencyFromApi()
-    console.log('echo')
-  }
+
   getCurrencyFromApi = () => {
     fetch('https://api.coinmarketcap.com/v2/ticker/?limit=20')
       .then(resp => {
